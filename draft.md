@@ -48,3 +48,12 @@
 - insurance payment (v2)
 - count score (A = 1/11)
 - check winner
+
+## deployment
+
+- https://blog.heroku.com/deploying-react-with-zero-configuration
+
+==========
+
+https://en.wikipedia.org/wiki/Standard_52-card_deck
+
