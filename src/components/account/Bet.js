@@ -1,21 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Bet = ({ value }) => (
+const Bet = ({ amount, increaseBet, decreaseBet }) => (
   <div>
-    <div> Bet: {value} $</div>
+    <div> Bet: {amount} $</div>
     <div>
       Manage bet:
       <ul>
-        <li>Increase (10$)</li>
-        <li>Decrease (10$)</li>
+        <li onClick={increaseBet}>Increase (10$)</li>
+        <li onClick={decreaseBet}>Decrease (10$)</li>
       </ul>
     </div>
   </div>
 );
 
 Bet.propTypes = {
-  value: PropTypes.number.isRequired
+  amount: PropTypes.number.isRequired,
+  increaseBet: PropTypes.func.isRequired,
+  decreaseBet: PropTypes.func.isRequired
 };
 
 export default Bet;

@@ -27,3 +27,13 @@ export const VisibilityFilters = {
 export const addPlayerCard = () => ({
   type: 'ADD_PLAYER_CARD'
 })
+
+export const increaseBet = (amount) => ({
+  type: 'INCREASE_BET',
+  amount
+})
+
+export const decreaseBet = (amount) => ({
+  type: 'DECREASE_BET',
+  amount
+})

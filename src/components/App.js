@@ -4,7 +4,7 @@ import AddTodo from "../containers/AddTodo";
 import VisibleTodoList from "../containers/VisibleTodoList";
 
 import Wallet from "./account/Wallet";
-import Bet from "./account/Bet";
+import BetContainer from "../containers/BetContainer";
 import PlayerHandContainer from "../containers/PlayerHandContainer";
 import CommandsContainer from "../containers/CommandsContainer";
 import DealerHandContainer from "../containers/DealerHandContainer";
@@ -29,7 +29,7 @@ const App = () => (
     <br />
     <Wallet value={1000} />
     <br />
-    <Bet value={100} />
+    <BetContainer />
     <br />
     <CommandsContainer />
   </div>
