@@ -5,12 +5,12 @@ import Card from "./Card";
 import Score from "./Score";
 
 const Hand = ({ cards }) => (
-  <div>
+  <span>
     {cards.map(card => (
       <Card suit={card.suit} rank={card.rank} />
     ))}
     <Score cards={cards} />
-  </div>
+  </span>
 );
 
 Hand.propTypes = {

@@ -3,11 +3,12 @@ import Footer from "./Footer";
 import AddTodo from "../containers/AddTodo";
 import VisibleTodoList from "../containers/VisibleTodoList";
 
-import Wallet from "./account/Wallet";
+import WalletContainer from "../containers/WalletContainer";
 import BetContainer from "../containers/BetContainer";
 import PlayerHandContainer from "../containers/PlayerHandContainer";
 import CommandsContainer from "../containers/CommandsContainer";
 import DealerHandContainer from "../containers/DealerHandContainer";
+import InfoContainer from "../containers/InfoContainer";
 
 const App = () => (
   <div>
@@ -23,11 +24,13 @@ const App = () => (
     <br />
     <br />
     <br />
+    <InfoContainer />
+    <br />
     <DealerHandContainer />
     <br />
     <PlayerHandContainer />
     <br />
-    <Wallet value={1000} />
+    <WalletContainer/>
     <br />
     <BetContainer />
     <br />

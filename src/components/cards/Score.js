@@ -27,7 +27,7 @@ export const handScore = cards => {
   }
 };
 
-const Score = ({ cards }) => <span>Score: {handScore(cards)}</span>;
+const Score = ({ cards }) => <div>Score: {handScore(cards)}</div>;
 
 Score.propTypes = {
   cards: PropTypes.arrayOf(

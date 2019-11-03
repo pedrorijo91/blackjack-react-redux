@@ -5,8 +5,7 @@ import Hand from "./Hand";
 
 const PlayerHand = ({ cards }) => (
   <div>
-    <div>Player hand:</div>
-    <Hand cards={cards} />
+    Player hand: <Hand cards={cards} />
   </div>
 );
 

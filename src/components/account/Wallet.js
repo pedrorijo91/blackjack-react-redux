@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Wallet = ({ value }) => <div> Account: {value} $</div>;
+const Wallet = ({ amount }) => <div> Account: <strong>{amount}</strong> $</div>;
 
 Wallet.propTypes = {
-  value: PropTypes.number.isRequired
+  amount: PropTypes.number.isRequired
 };
 
 export default Wallet;
