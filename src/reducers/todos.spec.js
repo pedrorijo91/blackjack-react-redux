@@ -1,5 +1,6 @@
 import todos from './todos'
 
+// FIXME delete file
 describe('todos reducer', () => {
   it('should handle initial state', () => {
     expect(

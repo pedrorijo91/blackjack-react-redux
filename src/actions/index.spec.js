@@ -1,5 +1,7 @@
 import * as actions from './index'
 
+// FIXME: add UT
+
 describe('todo actions', () => {
   it('addTodo should create ADD_TODO action', () => {
     expect(actions.addTodo('Use Redux')).toEqual({
