@@ -1,17 +1,22 @@
 import { CARD_SUITS, CARD_RANKS } from "../components/cards/Card";
 
 const shuffle = array => {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 
-    return array;
-}
+  return array;
+};
 
 const initialDeck = () => {
-  return shuffle(CARD_RANKS.map(r => CARD_SUITS.map(s => ({rank: r, suit: s}))).flat());
-}
+  const nestedDeck = CARD_RANKS.map(r =>
+    CARD_SUITS.map(s => ({ rank: r, suit: s }))
+  );
+  const flatDeck = [].concat(...nestedDeck); // TODO replace by Array.flat() when released
+
+  return shuffle(flatDeck);
+};
 
 const game = (
   state = { playerHand: [], dealerHand: [], deck: initialDeck() },

@@ -1,27 +1,47 @@
-import * as actions from './index'
+import * as actions from "./index";
 
-// FIXME: add UT
+describe("blackjack actions", () => {
+  it("startGame should create START_GAME action", () => {
+    expect(actions.startGame()).toEqual({
+      type: "START_GAME"
+    });
+  });
 
-describe('todo actions', () => {
-  it('addTodo should create ADD_TODO action', () => {
-    expect(actions.addTodo('Use Redux')).toEqual({
-      type: 'ADD_TODO',
-      id: 0,
-      text: 'Use Redux'
-    })
-  })
+  it("addPlayerCard should create ADD_PLAYER_CARD action", () => {
+    expect(actions.addPlayerCard()).toEqual({
+      type: "ADD_PLAYER_CARD"
+    });
+  });
 
-  it('setVisibilityFilter should create SET_VISIBILITY_FILTER action', () => {
-    expect(actions.setVisibilityFilter('active')).toEqual({
-      type: 'SET_VISIBILITY_FILTER',
-      filter: 'active'
-    })
-  })
+  it("dealerTurn should create DEALER_TURN action", () => {
+    expect(actions.dealerTurn()).toEqual({
+      type: "DEALER_TURN"
+    });
+  });
 
-  it('toggleTodo should create TOGGLE_TODO action', () => {
-    expect(actions.toggleTodo(1)).toEqual({
-      type: 'TOGGLE_TODO',
-      id: 1
-    })
-  })
-})
+  it("increaseBet should create INCREASE_BET action", () => {
+    expect(actions.increaseBet(10)).toEqual({
+      type: "INCREASE_BET",
+      amount: 10
+    });
+  });
+
+  it("decreaseBet should create DECREASE_BET action", () => {
+    expect(actions.decreaseBet(20)).toEqual({
+      type: "DECREASE_BET",
+      amount: 20
+    });
+  });
+
+  it("allIn should create ALL_IN action", () => {
+    expect(actions.allIn()).toEqual({
+      type: "ALL_IN"
+    });
+  });
+
+  it("clearBet should create CLEAR_BET action", () => {
+    expect(actions.clearBet()).toEqual({
+      type: "CLEAR_BET"
+    });
+  });
+});

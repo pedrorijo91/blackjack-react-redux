@@ -1,5 +1,5 @@
-import { handScore } from "../Score";
-import { CARD_SUITS } from "../Card";
+import { handScore } from "./Game";
+import { CARD_SUITS } from "../cards/Card";
 
 describe("hand score", () => {
   it("should be 0 for empty hand", () => {
@@ -139,5 +139,22 @@ describe("hand score", () => {
       ])
     ).toEqual(14);
   });
+});
 
+describe('isStartGameEnabled', () => {
+    it("should...", () => {
+        fail('missing impl');
+      });
+});
+
+describe('isHitEnabled', () => {
+    it("should...", () => {
+        fail('missing impl');
+      });
+});
+
+describe('isStandEnabled', () => {
+    it("should...", () => {
+        fail('missing impl');
+      });
 });
