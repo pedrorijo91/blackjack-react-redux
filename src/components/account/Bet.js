@@ -1,19 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-// FIXME extract to common file
-const noOp = () => {
-  return; // do nothing
-};
-
-const enabledStyle = {
-  fontWeight: "bold"
-};
-
-const disabledStyle = {
-  textDecorationLine: "line-through"
-};
-
 const createCommand = (enabled, fn, text) => {
   return (
     <button disabled={!enabled} onClick={fn}>
