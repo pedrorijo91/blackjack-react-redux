@@ -7,7 +7,7 @@ import Score from "./Score";
 const Hand = ({ cards }) => (
   <span>
     {cards.map(card => (
-      <Card suit={card.suit} rank={card.rank} />
+      <Card key={card.suit.concat(card.rank)} suit={card.suit} rank={card.rank} />
     ))}
     <Score cards={cards} />
   </span>
