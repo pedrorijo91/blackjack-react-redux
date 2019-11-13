@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 import Hand from "./Hand";
 
-const DealerHand = ({ cards }) => (
+const DealerHand = ({ cards, playerFinished }) => (
   <div>
-    Dealer hand: <Hand cards={cards} />
+    Dealer hand: <Hand cards={cards} hideLastCard={!playerFinished}/>
   </div>
 );
 
@@ -15,7 +15,8 @@ DealerHand.propTypes = {
       suit: PropTypes.string,
       rank: PropTypes.string
     })
-  ).isRequired
+  ).isRequired,
+  playerFinished: PropTypes.bool.isRequired
 };
 
 export default DealerHand;
