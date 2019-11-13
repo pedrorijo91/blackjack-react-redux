@@ -23,7 +23,7 @@ const processDealerTurn = (playerHand, dealerHand, deck) => {
   const playerScore = handScore(playerHand);
   const dealerScore = handScore(dealerHand);
 
-  if (dealerScore < 21 && dealerScore < playerScore) {
+  if (dealerScore < 17 && dealerScore < playerScore) {
     const newDealerHand = [...dealerHand, deck[0]];
     const newDeck = deck.slice(1);
     return processDealerTurn(playerHand, newDealerHand, newDeck);
