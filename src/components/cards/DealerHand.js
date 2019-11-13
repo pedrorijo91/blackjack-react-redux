@@ -5,7 +5,7 @@ import Hand from "./Hand";
 
 const DealerHand = ({ cards, playerFinished }) => (
   <div>
-    Dealer hand: <Hand cards={cards} hideLastCard={!playerFinished}/>
+    Dealer hand: <Hand cards={cards} hideLastCard={!playerFinished} />
   </div>
 );
 

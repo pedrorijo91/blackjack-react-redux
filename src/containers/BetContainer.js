@@ -9,10 +9,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    increaseBet: () => dispatch(increaseBet(10)),
-    decreaseBet: () => dispatch(decreaseBet(10)),
-    allIn: () => dispatch(allIn()),
-    clearBet: () => dispatch(clearBet())
+  increaseBet: () => dispatch(increaseBet(10)),
+  decreaseBet: () => dispatch(decreaseBet(10)),
+  allIn: () => dispatch(allIn()),
+  clearBet: () => dispatch(clearBet())
 });
 
 export default connect(

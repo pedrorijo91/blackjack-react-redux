@@ -24,7 +24,14 @@ const createCommand = (enabled, fn, text) => {
   );
 };
 
-const Commands = ({ addPlayerCard, startGame, dealerTurn, isStartGameEnabled, isHitEnabled, isStandEnabled }) => (
+const Commands = ({
+  addPlayerCard,
+  startGame,
+  dealerTurn,
+  isStartGameEnabled,
+  isHitEnabled,
+  isStandEnabled
+}) => (
   <div>
     <div>Commands: </div>
     <ul>
@@ -57,7 +64,5 @@ Commands.defaultProps = {
   isHitEnabled: false,
   isStandEnabled: false
 };
-
-
 
 export default Commands;

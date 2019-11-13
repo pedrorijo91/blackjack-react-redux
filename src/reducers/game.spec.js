@@ -156,6 +156,6 @@ describe("game reducer", () => {
   });
 
   it("should handle DEALER_TURN", () => {
-    fail('missing impl');
+    fail("missing impl");
   });
 });

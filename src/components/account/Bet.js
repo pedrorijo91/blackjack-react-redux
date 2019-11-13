@@ -9,17 +9,37 @@ const createCommand = (enabled, fn, text) => {
   );
 };
 
-const Bet = ({ amount, increaseBet, decreaseBet, allIn, clearBet, wallet, gameStarted }) => (
+const Bet = ({
+  amount,
+  increaseBet,
+  decreaseBet,
+  allIn,
+  clearBet,
+  wallet,
+  gameStarted
+}) => (
   <div>
     <div>
       Bet: <strong>{amount}</strong>$
     </div>
     <div>
       <span>Manage bet: </span>
-        {createCommand(!gameStarted && amount > 0, clearBet, `Clear Bet (${amount}$)`)}
-        {createCommand(!gameStarted && amount >= 10, decreaseBet, "Decrease (10$)")}
-        {createCommand(!gameStarted && wallet >= 10, increaseBet, "Increase (10$)")}
-        {createCommand(!gameStarted && wallet > 0, allIn, `All In (${wallet}$)`)}
+      {createCommand(
+        !gameStarted && amount > 0,
+        clearBet,
+        `Clear Bet (${amount}$)`
+      )}
+      {createCommand(
+        !gameStarted && amount >= 10,
+        decreaseBet,
+        "Decrease (10$)"
+      )}
+      {createCommand(
+        !gameStarted && wallet >= 10,
+        increaseBet,
+        "Increase (10$)"
+      )}
+      {createCommand(!gameStarted && wallet > 0, allIn, `All In (${wallet}$)`)}
     </div>
   </div>
 );

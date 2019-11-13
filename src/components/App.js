@@ -15,7 +15,7 @@ const App = () => (
     <br />
     <PlayerHandContainer />
     <br />
-    <WalletContainer/>
+    <WalletContainer />
     <br />
     <BetContainer />
     <br />

@@ -141,20 +141,20 @@ describe("hand score", () => {
   });
 });
 
-describe('isStartGameEnabled', () => {
-    it("should...", () => {
-        fail('missing impl');
-      });
+describe("isStartGameEnabled", () => {
+  it("should...", () => {
+    fail("missing impl");
+  });
 });
 
-describe('isHitEnabled', () => {
-    it("should...", () => {
-        fail('missing impl');
-      });
+describe("isHitEnabled", () => {
+  it("should...", () => {
+    fail("missing impl");
+  });
 });
 
-describe('isStandEnabled', () => {
-    it("should...", () => {
-        fail('missing impl');
-      });
+describe("isStandEnabled", () => {
+  it("should...", () => {
+    fail("missing impl");
+  });
 });

@@ -7,8 +7,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    increaseBet: () => dispatch(increaseBet(10)),
-    decreaseBet: () => dispatch(decreaseBet(10))
+  increaseBet: () => dispatch(increaseBet(10)),
+  decreaseBet: () => dispatch(decreaseBet(10))
 });
 
 export default connect(
