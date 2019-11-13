@@ -1,4 +1,5 @@
 import { CARD_SUITS, CARD_RANKS } from "../components/cards/Card";
+import { handScore } from "../components/game/Game";
 
 const shuffle = array => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -18,8 +19,31 @@ const initialDeck = () => {
   return shuffle(flatDeck);
 };
 
+const processDealerTurn = (playerHand, dealerHand, deck) => {
+  const playerScore = handScore(playerHand);
+  const dealerScore = handScore(dealerHand);
+
+  if (dealerScore < 21 && dealerScore < playerScore) {
+    const newDealerHand = [...dealerHand, deck[0]];
+    const newDeck = deck.slice(1);
+    return processDealerTurn(playerHand, newDealerHand, newDeck);
+  } else {
+    return {
+      playerHand,
+      dealerHand,
+      deck,
+      playerFinished: true
+    };
+  }
+};
+
 const game = (
-  state = { playerHand: [], dealerHand: [], deck: initialDeck(), playerFinished: false },
+  state = {
+    playerHand: [],
+    dealerHand: [],
+    deck: initialDeck(),
+    playerFinished: false
+  },
   action
 ) => {
   switch (action.type) {
@@ -38,12 +62,7 @@ const game = (
         playerFinished: false
       };
     case "DEALER_TURN":
-      return {
-        playerHand: state.playerHand,
-        dealerHand: [...state.dealerHand, state.deck[0]], // FIXME fetch cards until win / bust
-        deck: state.deck.slice(1),
-        playerFinished: true
-      };
+      return processDealerTurn(state.playerHand, state.dealerHand, state.deck);
     default:
       return state;
   }

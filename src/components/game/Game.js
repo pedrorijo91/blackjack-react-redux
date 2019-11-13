@@ -38,11 +38,10 @@ const hasGameStarted = state => {
 };
 
 const isGameOver = state => {
+  const playerScore = handScore(state.game.playerHand);
+  const dealerScore = handScore(state.game.dealerHand);
 
-  const playerScore = handScore(state.game.playerHand)
-  const dealerScore = handScore(state.game.dealerHand)
-
-  return state.game.playerFinished || playerScore > 21 || dealerScore > 21
+  return state.game.playerFinished || playerScore > 21 || dealerScore > 21;
 };
 
 export const isStartGameEnabled = state => {
