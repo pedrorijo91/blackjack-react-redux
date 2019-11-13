@@ -16,12 +16,9 @@ const disabledStyle = {
 
 const createCommand = (enabled, fn, text) => {
   return (
-    <li
-      style={enabled ? enabledStyle : disabledStyle}
-      onClick={enabled ? fn : noOp}
-    >
+    <button disabled={!enabled} onClick={fn}>
       {text}
-    </li>
+    </button>
   );
 };
 
@@ -31,13 +28,11 @@ const Bet = ({ amount, increaseBet, decreaseBet, allIn, clearBet, wallet, gameSt
       Bet: <strong>{amount}</strong>$
     </div>
     <div>
-      Manage bet:
-      <ul>
-        {createCommand(!gameStarted && wallet >= 10, increaseBet, "Increase (10$)")}
-        {createCommand(!gameStarted && amount >= 10, decreaseBet, "Decrease (10$)")}
-        {createCommand(!gameStarted && wallet > 0, allIn, "All In")}
+      <span>Manage bet: </span>
         {createCommand(!gameStarted && amount > 0, clearBet, "Clear Bet")}
-      </ul>
+        {createCommand(!gameStarted && amount >= 10, decreaseBet, "Decrease (10$)")}
+        {createCommand(!gameStarted && wallet >= 10, increaseBet, "Increase (10$)")}
+        {createCommand(!gameStarted && wallet > 0, allIn, "All In")}
     </div>
   </div>
 );
