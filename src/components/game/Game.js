@@ -42,8 +42,7 @@ const isGameOver = state => {
   const playerScore = handScore(state.game.playerHand)
   const dealerScore = handScore(state.game.dealerHand)
 
-  // FIXME  OR dealer > player (and player click stand (card shown?))
-  return playerScore > 21 || dealerScore > 21 
+  return state.game.playerFinished || playerScore > 21 || dealerScore > 21
 };
 
 export const isStartGameEnabled = state => {

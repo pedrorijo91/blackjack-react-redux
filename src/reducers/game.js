@@ -19,7 +19,7 @@ const initialDeck = () => {
 };
 
 const game = (
-  state = { playerHand: [], dealerHand: [], deck: initialDeck() },
+  state = { playerHand: [], dealerHand: [], deck: initialDeck(), playerFinished: false },
   action
 ) => {
   switch (action.type) {
@@ -27,19 +27,22 @@ const game = (
       return {
         playerHand: [state.deck[0], state.deck[1]],
         dealerHand: [state.deck[2], state.deck[3]], // FIXME hide 1 card
-        deck: state.deck.slice(4)
+        deck: state.deck.slice(4),
+        playerFinished: false
       };
     case "ADD_PLAYER_CARD":
       return {
         playerHand: [...state.playerHand, state.deck[0]],
         dealerHand: state.dealerHand,
-        deck: state.deck.slice(1)
+        deck: state.deck.slice(1),
+        playerFinished: false
       };
     case "DEALER_TURN":
       return {
         playerHand: state.playerHand,
         dealerHand: [...state.dealerHand, state.deck[0]], // FIXME fetch cards until win / bust
-        deck: state.deck.slice(1)
+        deck: state.deck.slice(1),
+        playerFinished: true
       };
     default:
       return state;

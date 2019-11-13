@@ -9,6 +9,7 @@ describe("game reducer", () => {
     const initialState = game(undefined, {});
     expect(initialState).toHaveProperty("playerHand", []);
     expect(initialState).toHaveProperty("dealerHand", []);
+    expect(initialState).toHaveProperty("playerFinished", false);
 
     expect(initialState).toHaveProperty("deck");
     expect(removeDup(initialState.deck)).toHaveLength(52);
@@ -19,6 +20,7 @@ describe("game reducer", () => {
       {
         playerHand: [],
         dealerHand: [],
+        playerFinished: false,
         deck: [
           {
             rank: "2",
@@ -68,6 +70,7 @@ describe("game reducer", () => {
           suit: "DIAMONDS"
         }
       ],
+      playerFinished: false,
       deck: [
         {
           rank: "6",
@@ -100,6 +103,7 @@ describe("game reducer", () => {
             suit: "DIAMONDS"
           }
         ],
+        playerFinished: false,
         deck: [
           {
             rank: "6",
@@ -141,6 +145,7 @@ describe("game reducer", () => {
           suit: "DIAMONDS"
         }
       ],
+      playerFinished: false,
       deck: [
         {
           rank: "7",
@@ -148,5 +153,9 @@ describe("game reducer", () => {
         }
       ]
     });
+  });
+
+  it("should handle DEALER_TURN", () => {
+    fail('missing impl');
   });
 });
