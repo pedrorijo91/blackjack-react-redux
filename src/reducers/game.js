@@ -50,7 +50,7 @@ const game = (
     case "START_GAME":
       return {
         playerHand: [state.deck[0], state.deck[1]],
-        dealerHand: [state.deck[2], state.deck[3]], // FIXME hide 1 card
+        dealerHand: [state.deck[2], state.deck[3]],
         deck: state.deck.slice(4),
         playerFinished: false
       };

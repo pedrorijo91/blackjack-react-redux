@@ -38,10 +38,10 @@ const hasGameStarted = state => {
 };
 
 const isGameOver = state => {
-  return winner(state) !== GAME_RESULT.UNFINISHED;
+  return gameResult(state) !== GAME_RESULT.UNFINISHED;
 };
 
-export const winner = state => {
+export const gameResult = state => {
   const playerScore = handScore(state.game.playerHand);
 
   if (playerScore > 21) {

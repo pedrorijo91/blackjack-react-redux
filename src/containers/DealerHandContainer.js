@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
 import DealerHand from "../components/cards/DealerHand";
+import { gameResult, GAME_RESULT } from "../components/game/Game";
 
 const mapStateToProps = state => ({
   cards: state.game.dealerHand,
-  playerFinished: state.game.playerFinished
+  hideCard: gameResult(state) === GAME_RESULT.UNFINISHED
 });
 
 export default connect(mapStateToProps)(DealerHand);
