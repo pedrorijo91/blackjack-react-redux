@@ -38,10 +38,32 @@ const hasGameStarted = state => {
 };
 
 const isGameOver = state => {
+  return winner(state) !== GAME_RESULT.UNFINISHED;
+};
+
+export const winner = state => {
   const playerScore = handScore(state.game.playerHand);
 
-  return state.game.playerFinished || playerScore > 21;
-};
+  if (playerScore > 21) {
+    return GAME_RESULT.DEALER;
+  }
+
+  if (!state.game.playerFinished) {
+    return GAME_RESULT.UNFINISHED;
+  }
+
+  const dealerScore = handScore(state.game.dealerHand);
+
+  if (playerScore > dealerScore || dealerScore > 21) {
+    return GAME_RESULT.PLAYER;
+  }
+
+  if (dealerScore > playerScore) {
+    return GAME_RESULT.DEALER;
+  }
+
+  return GAME_RESULT.TIE;
+}
 
 export const isStartGameEnabled = state => {
   return !hasGameStarted(state) && state.account.bet > 0;
@@ -58,3 +80,10 @@ export const isHitEnabled = state => {
 export const isStandEnabled = state => {
   return hasGameStarted(state) && !isGameOver(state);
 };
+
+export const GAME_RESULT = {
+  PLAYER: 'PLAYER',
+  DEALER: 'DEALER',
+  TIE: 'TIE',
+  UNFINISHED: 'UNFINISHED'
+}

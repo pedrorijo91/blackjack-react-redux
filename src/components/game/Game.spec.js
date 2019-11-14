@@ -158,3 +158,9 @@ describe("isStandEnabled", () => {
     fail("missing impl");
   });
 });
+
+describe("game result", () => {
+  it("should...", () => {
+    fail("missing imp");
+  })
+})
