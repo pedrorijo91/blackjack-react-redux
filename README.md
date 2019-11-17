@@ -1,8 +1,11 @@
 # React - Redux blackjack game example
 
 [![CircleCI](https://circleci.com/gh/pedrorijo91/blackjack-react-redux/tree/master.svg?style=svg&circle-token=2994ecdf66de13d8cd9f8aa53df5de206b778bf9)](https://circleci.com/gh/pedrorijo91/blackjack-react-redux/tree/master)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f2c9233c-cee5-4808-be9b-24bfcfe40938/deploy-status)](https://app.netlify.com/sites/blackjack-redux/deploys)
 
 This project template was built with [Create React App](https://github.com/facebookincubator/create-react-app), which provides a simple way to start React projects with no build configuration needed.
+
+Inspired from [https://blackjackbreak.com](https://blackjackbreak.com)
 
 Projects built with Create-React-App include support for ES6 syntax, as well as several unofficial / not-yet-final forms of Javascript syntax such as Class Properties and JSX. See the list of [language features and polyfills supported by Create-React-App](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features-and-polyfills) for more information.
 
