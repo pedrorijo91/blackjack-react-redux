@@ -28,9 +28,11 @@ const Commands = ({
   addPlayerCard,
   startGame,
   dealerTurn,
+  newRound,
   isStartGameEnabled,
   isHitEnabled,
-  isStandEnabled
+  isStandEnabled,
+  isNewRoundEnabled
 }) => (
   <div>
     <div>Commands: </div>
@@ -38,6 +40,7 @@ const Commands = ({
       {createCommand(isStartGameEnabled, startGame, "Start Game")}
       {createCommand(isHitEnabled, addPlayerCard, "Hit")}
       {createCommand(isStandEnabled, dealerTurn, "Stand")}
+      {createCommand(isNewRoundEnabled, newRound, "New Round")}
     </ul>
 
     <div>Not implemented yet: </div>
@@ -54,15 +57,18 @@ Commands.propTypes = {
   startGame: PropTypes.func.isRequired,
   addPlayerCard: PropTypes.func.isRequired,
   dealerTurn: PropTypes.func.isRequired,
+  newRound: PropTypes.func.isRequired,
   isStartGameEnabled: PropTypes.bool,
   isHitEnabled: PropTypes.bool,
-  isStandEnabled: PropTypes.bool
+  isStandEnabled: PropTypes.bool,
+  isNewRoundEnabled: PropTypes.bool
 };
 
 Commands.defaultProps = {
   isStartGameEnabled: false,
   isHitEnabled: false,
-  isStandEnabled: false
+  isStandEnabled: false,
+  isNewRoundEnabled: false
 };
 
 export default Commands;

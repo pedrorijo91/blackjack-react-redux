@@ -1,12 +1,3 @@
-export const computeBetPayment = (dealerHand, playerHand, bet) => {
-  /*
-        if dealer score = player score => bet
-        if dealer score > player score => 0
-        if player has BJ => 2.5 * bet
-        else => 2 * bet
-    */
-};
-
 const cardScore = card => {
   if (["J", "Q", "K"].includes(card.rank)) {
     return 10;
@@ -80,6 +71,10 @@ export const isHitEnabled = state => {
 export const isStandEnabled = state => {
   return hasGameStarted(state) && !isGameOver(state);
 };
+
+export const isNewRoundEnabled = state => {
+  return isGameOver(state);
+}
 
 export const GAME_RESULT = {
   PLAYER: 'PLAYER',

@@ -80,6 +80,15 @@ const all = (
         deck: state.deck.slice(4),
         playerFinished: false
       };
+      case "NEW_ROUND":
+        return {
+          playerHand: [],
+          dealerHand: [],
+          deck: initialDeck(),
+          playerFinished: false,
+          wallet: state.wallet === 0 ? 1000 : state.wallet,
+          bet: 0
+        }
     case "ADD_PLAYER_CARD":
       return {
         ...state,
