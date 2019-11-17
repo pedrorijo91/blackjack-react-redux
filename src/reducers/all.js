@@ -19,20 +19,43 @@ const initialDeck = () => {
   return shuffle(flatDeck);
 };
 
-const processDealerTurn = (playerHand, dealerHand, deck) => {
+const processWinner = (playerScore, dealerScore, wallet, bet) => {
+
+    if (playerScore > 21 || playerScore < dealerScore) {
+        return wallet;
+    }
+
+    if (dealerScore > 21 || dealerScore < playerScore) {
+        return wallet + 2 * bet;
+    }
+
+    if (playerScore === dealerScore) {
+        return wallet + bet;
+    }
+
+    // TODO blackjack prize
+
+}
+
+const processDealerTurn = (playerHand, dealerHand, deck, wallet, bet) => {
   const playerScore = handScore(playerHand);
   const dealerScore = handScore(dealerHand);
 
   if (dealerScore < 17 && dealerScore < playerScore) {
     const newDealerHand = [...dealerHand, deck[0]];
     const newDeck = deck.slice(1);
-    return processDealerTurn(playerHand, newDealerHand, newDeck);
+    return processDealerTurn(playerHand, newDealerHand, newDeck, wallet, bet);
   } else {
+
+    const newWallet = processWinner(playerScore, dealerScore, wallet, bet)
+
     return {
       playerHand,
       dealerHand,
       deck,
-      playerFinished: true
+      playerFinished: true,
+      bet: 0,
+      wallet: newWallet
     };
   }
 };
@@ -66,11 +89,7 @@ const all = (
         playerFinished: false
       };
     case "DEALER_TURN":
-        const hands = processDealerTurn(state.playerHand, state.dealerHand, state.deck);
-        return {
-            ...state,
-            ...hands
-        }
+        return processDealerTurn(state.playerHand, state.dealerHand, state.deck, state.wallet, state.bet);
     case "INCREASE_BET":
       return {
         ...state,
