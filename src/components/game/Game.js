@@ -54,7 +54,7 @@ export const gameResult = state => {
   }
 
   return GAME_RESULT.TIE;
-}
+};
 
 export const isStartGameEnabled = state => {
   return !hasGameStarted(state) && state.bet > 0;
@@ -62,9 +62,7 @@ export const isStartGameEnabled = state => {
 
 export const isHitEnabled = state => {
   return (
-    hasGameStarted(state) &&
-    !isGameOver(state) &&
-    state.dealerHand.length === 2
+    hasGameStarted(state) && !isGameOver(state) && state.dealerHand.length === 2
   );
 };
 
@@ -74,11 +72,11 @@ export const isStandEnabled = state => {
 
 export const isNewRoundEnabled = state => {
   return isGameOver(state);
-}
+};
 
 export const GAME_RESULT = {
-  PLAYER: 'PLAYER',
-  DEALER: 'DEALER',
-  TIE: 'TIE',
-  UNFINISHED: 'UNFINISHED'
-}
+  PLAYER: "PLAYER",
+  DEALER: "DEALER",
+  TIE: "TIE",
+  UNFINISHED: "UNFINISHED"
+};

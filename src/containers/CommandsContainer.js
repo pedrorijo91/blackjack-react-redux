@@ -22,7 +22,4 @@ const mapDispatchToProps = dispatch => ({
   newRound: () => dispatch(newRound())
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Commands);
+export default connect(mapStateToProps, mapDispatchToProps)(Commands);

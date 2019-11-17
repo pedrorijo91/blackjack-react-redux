@@ -15,7 +15,4 @@ const mapDispatchToProps = dispatch => ({
   clearBet: () => dispatch(clearBet())
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Bet);
+export default connect(mapStateToProps, mapDispatchToProps)(Bet);

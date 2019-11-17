@@ -162,5 +162,5 @@ describe("isStandEnabled", () => {
 describe("game result", () => {
   it("should...", () => {
     fail("missing imp");
-  })
-})
+  });
+});

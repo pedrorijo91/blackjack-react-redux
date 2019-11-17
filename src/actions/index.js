@@ -6,7 +6,6 @@ export const newRound = () => ({
   type: "NEW_ROUND"
 });
 
-
 export const addPlayerCard = () => ({
   type: "ADD_PLAYER_CARD"
 });

@@ -1,4 +1,4 @@
-import all from "./all";
+import { all, processDealerTurn } from "./all";
 import { fail } from "assert";
 
 const removeDup = cards => {
@@ -7,6 +7,35 @@ const removeDup = cards => {
 
 describe("all reducer", () => {
   it("should handle initial state", () => {
-    fail("missing impl");
+
+    const dealerHand = [
+      {
+        rank: "8",
+        suit: "DIAMONDS"
+      },
+      {
+        rank: "10",
+        suit: "DIAMONDS"
+      }
+    ];
+
+    const playerHand = [
+      {
+        rank: "9",
+        suit: "DIAMONDS"
+      },
+      {
+        rank: "10",
+        suit: "DIAMONDS"
+      }
+    ];
+
+    const res = processDealerTurn(playerHand, dealerHand, [], 0, 1000);
+
+    console.log(res);
+
+
   });
 });
+
+

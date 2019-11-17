@@ -11,7 +11,4 @@ const mapDispatchToProps = dispatch => ({
   decreaseBet: () => dispatch(decreaseBet(10))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Wallet);
+export default connect(mapStateToProps, mapDispatchToProps)(Wallet);
