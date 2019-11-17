@@ -3,9 +3,9 @@ import Bet from "../components/account/Bet";
 import { increaseBet, decreaseBet, allIn, clearBet } from "../actions";
 
 const mapStateToProps = state => ({
-  amount: state.account.bet,
-  wallet: state.account.wallet,
-  gameStarted: state.game.playerHand.length > 0
+  amount: state.bet,
+  wallet: state.wallet,
+  gameStarted: state.playerHand.length > 0
 });
 
 const mapDispatchToProps = dispatch => ({

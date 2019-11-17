@@ -3,7 +3,7 @@ import Wallet from "../components/account/Wallet";
 import { increaseBet, decreaseBet } from "../actions";
 
 const mapStateToProps = state => ({
-  amount: state.account.wallet
+  amount: state.wallet
 });
 
 const mapDispatchToProps = dispatch => ({

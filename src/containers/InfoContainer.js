@@ -3,7 +3,7 @@ import { gameResult } from "../components/game/Game"
 import Info from "../components/game/Info";
 
 const mapStateToProps = state => ({
-  waitingForBet: state.game.playerHand.length === 0,
+  waitingForBet: state.playerHand.length === 0,
   winner: gameResult(state)
 });
 

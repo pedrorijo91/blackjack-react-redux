@@ -34,7 +34,7 @@ export const handScore = cards => {
 };
 
 const hasGameStarted = state => {
-  return state.game.playerHand.length > 0;
+  return state.playerHand.length > 0;
 };
 
 const isGameOver = state => {
@@ -42,17 +42,17 @@ const isGameOver = state => {
 };
 
 export const gameResult = state => {
-  const playerScore = handScore(state.game.playerHand);
+  const playerScore = handScore(state.playerHand);
 
   if (playerScore > 21) {
     return GAME_RESULT.DEALER;
   }
 
-  if (!state.game.playerFinished) {
+  if (!state.playerFinished) {
     return GAME_RESULT.UNFINISHED;
   }
 
-  const dealerScore = handScore(state.game.dealerHand);
+  const dealerScore = handScore(state.dealerHand);
 
   if (playerScore > dealerScore || dealerScore > 21) {
     return GAME_RESULT.PLAYER;
@@ -66,14 +66,14 @@ export const gameResult = state => {
 }
 
 export const isStartGameEnabled = state => {
-  return !hasGameStarted(state) && state.account.bet > 0;
+  return !hasGameStarted(state) && state.bet > 0;
 };
 
 export const isHitEnabled = state => {
   return (
     hasGameStarted(state) &&
     !isGameOver(state) &&
-    state.game.dealerHand.length === 2
+    state.dealerHand.length === 2
   );
 };
 
