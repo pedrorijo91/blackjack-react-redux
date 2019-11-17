@@ -20,22 +20,28 @@ const initialDeck = () => {
 };
 
 const processWinner = (playerScore, dealerScore, wallet, bet) => {
+  if (dealerScore > 21) {
+    return wallet + 2 * bet;
+  }
 
-    if (playerScore > 21 || playerScore < dealerScore) {
-        return wallet;
-    }
+  if (playerScore > 21) {
+    return wallet;
+  }
 
-    if (dealerScore > 21 || dealerScore < playerScore) {
-        return wallet + 2 * bet;
-    }
+  if (playerScore < dealerScore) {
+    return wallet;
+  }
 
-    if (playerScore === dealerScore) {
-        return wallet + bet;
-    }
+  if (dealerScore < playerScore) {
+    return wallet + 2 * bet;
+  }
 
-    // TODO blackjack prize
+  if (playerScore === dealerScore) {
+    return wallet + bet;
+  }
 
-}
+  // TODO blackjack prize
+};
 
 const processDealerTurn = (playerHand, dealerHand, deck, wallet, bet) => {
   const playerScore = handScore(playerHand);
@@ -46,8 +52,7 @@ const processDealerTurn = (playerHand, dealerHand, deck, wallet, bet) => {
     const newDeck = deck.slice(1);
     return processDealerTurn(playerHand, newDealerHand, newDeck, wallet, bet);
   } else {
-
-    const newWallet = processWinner(playerScore, dealerScore, wallet, bet)
+    const newWallet = processWinner(playerScore, dealerScore, wallet, bet);
 
     return {
       playerHand,
@@ -60,7 +65,7 @@ const processDealerTurn = (playerHand, dealerHand, deck, wallet, bet) => {
   }
 };
 
-const all = (
+export const all = (
   state = {
     playerHand: [],
     dealerHand: [],
@@ -80,15 +85,15 @@ const all = (
         deck: state.deck.slice(4),
         playerFinished: false
       };
-      case "NEW_ROUND":
-        return {
-          playerHand: [],
-          dealerHand: [],
-          deck: initialDeck(),
-          playerFinished: false,
-          wallet: state.wallet === 0 ? 1000 : state.wallet,
-          bet: 0
-        }
+    case "NEW_ROUND":
+      return {
+        playerHand: [],
+        dealerHand: [],
+        deck: initialDeck(),
+        playerFinished: false,
+        wallet: state.wallet === 0 ? 1000 : state.wallet,
+        bet: 0
+      };
     case "ADD_PLAYER_CARD":
       return {
         ...state,
@@ -98,7 +103,13 @@ const all = (
         playerFinished: false
       };
     case "DEALER_TURN":
-        return processDealerTurn(state.playerHand, state.dealerHand, state.deck, state.wallet, state.bet);
+      return processDealerTurn(
+        state.playerHand,
+        state.dealerHand,
+        state.deck,
+        state.wallet,
+        state.bet
+      );
     case "INCREASE_BET":
       return {
         ...state,
@@ -127,5 +138,3 @@ const all = (
       return state;
   }
 };
-
-export default all;

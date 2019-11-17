@@ -7,6 +7,12 @@ describe("blackjack actions", () => {
     });
   });
 
+  it("newRound should create NEW_ROUND action", () => {
+    expect(actions.newRound()).toEqual({
+      type: "NEW_ROUND"
+    });
+  });
+
   it("addPlayerCard should create ADD_PLAYER_CARD action", () => {
     expect(actions.addPlayerCard()).toEqual({
       type: "ADD_PLAYER_CARD"

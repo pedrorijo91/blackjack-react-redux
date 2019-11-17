@@ -18,6 +18,10 @@ export const CARD_RANKS = [
   "K"
 ];
 
+export const createCard = (rank, suit) => {
+  return { rank, suit };
+};
+
 const Card = ({ suit, rank, hide }) =>
   hide ? (
     <span> | ??? </span>
