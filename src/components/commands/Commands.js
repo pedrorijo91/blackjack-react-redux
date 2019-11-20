@@ -43,6 +43,7 @@ const Commands = ({
       {createCommand(isNewRoundEnabled, newRound, "New Round")}
     </ul>
 
+    {/* 
     <div>Not implemented yet: </div>
     <ul>
       <li style={{ textDecorationLine: "line-through" }}>Double</li>
@@ -50,6 +51,7 @@ const Commands = ({
       <li style={{ textDecorationLine: "line-through" }}>Split</li>
       <li style={{ textDecorationLine: "line-through" }}>Surrender</li>
     </ul>
+    */}
   </div>
 );
 

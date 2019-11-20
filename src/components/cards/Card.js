@@ -1,6 +1,3 @@
-import React from "react";
-import PropTypes from "prop-types";
-
 export const CARD_SUITS = ["DIAMONDS", "HEARTS", "CLUBS", "SPADES"];
 export const CARD_RANKS = [
   "A",
@@ -21,25 +18,3 @@ export const CARD_RANKS = [
 export const createCard = (rank, suit) => {
   return { rank, suit };
 };
-
-const Card = ({ suit, rank, hide }) =>
-  hide ? (
-    <span> | ??? </span>
-  ) : (
-    <span>
-      {" "}
-      | {rank} of {suit}{" "}
-    </span>
-  );
-
-Card.propTypes = {
-  suit: PropTypes.string.isRequired,
-  rank: PropTypes.string.isRequired,
-  hide: PropTypes.bool
-};
-
-Card.defaultProps = {
-  hide: false
-};
-
-export default Card;

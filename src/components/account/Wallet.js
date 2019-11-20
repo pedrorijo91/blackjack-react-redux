@@ -2,10 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Wallet = ({ amount }) => (
-  <div>
-    {" "}
+  <span>
     Account: <strong>{amount}</strong> $
-  </div>
+  </span>
 );
 
 Wallet.propTypes = {
