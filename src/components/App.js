@@ -6,6 +6,7 @@ import PlayerHandContainer from "../containers/PlayerHandContainer";
 import CommandsContainer from "../containers/CommandsContainer";
 import DealerHandContainer from "../containers/DealerHandContainer";
 import InfoContainer from "../containers/InfoContainer";
+import Footer from "./Footer";
 
 const App = () => (
   <>
@@ -19,6 +20,8 @@ const App = () => (
     <WalletContainer /> {" && "} <BetContainer />
     <br />
     <CommandsContainer />
+    <br />
+    <Footer />
   </div>
   </>
 );
