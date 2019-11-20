@@ -18,10 +18,10 @@ const Bet = ({
   wallet,
   gameStarted
 }) => (
-  <div>
-    <div>
+  <span>
+    <span>
       Bet: <strong>{amount}</strong>$
-    </div>
+    </span>
     <div>
       <span>Manage bet: </span>
       {createCommand(
@@ -41,7 +41,7 @@ const Bet = ({
       )}
       {createCommand(!gameStarted && wallet > 0, allIn, `All In (${wallet}$)`)}
     </div>
-  </div>
+  </span>
 );
 
 Bet.propTypes = {

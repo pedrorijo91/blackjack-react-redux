@@ -8,6 +8,7 @@ import DealerHandContainer from "../containers/DealerHandContainer";
 import InfoContainer from "../containers/InfoContainer";
 
 const App = () => (
+  <>
   <div>
     <InfoContainer />
     <br />
@@ -15,12 +16,11 @@ const App = () => (
     <br />
     <PlayerHandContainer />
     <br />
-    <WalletContainer />
-    <br />
-    <BetContainer />
+    <WalletContainer /> {" && "} <BetContainer />
     <br />
     <CommandsContainer />
   </div>
+  </>
 );
 
 export default App;
